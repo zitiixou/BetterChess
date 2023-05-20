@@ -1,0 +1,30 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+  "name": "Chess.com Chess Aid",
+  "description": "Chess.com extension to highlight the best move and key squares, as well as show the evaluation bar",
+  "version": "3.2.3",
+  "manifest_version": 3,
+  "icons": {
+    "16": "img/favicon/knight-16.png",
+    "48": "img/favicon/knight-48.png",
+    "128": "img/favicon/knight-128.png"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": ["storage", "scripting"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.chess.com/*"],
+      "js": ["js/chess.min.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "host_permissions": [
+    "https://www.chess.com/*"
+],
+"key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuJcujeXScBjwB2yWk4CDy12WjzMGmjAd1jpdRs2ZiFw0iK2DBzdb/vCSUgvkwk5vQlBgvyPjgKu7s9zfCtOd0G0Xp1IcQB+s7T3QkHphxCfgoqH2qYHbcfsqN1hSKLPDe0O5JGncYQih1YfecocAduuS7pJPf9v9BQnXiKXWN5VcPj3Slqgpt3xRemDmjR6uI1fUIjIXB7tjYSzRFEUT7mSFaEgcOSW00iAUUrGQfXlz3qLohPsdnplWit8qSlWd865ec7TtEk3P6PQ8E71ysT+nzpLIVujSS0ZeKhHdU4wSpOb4XCGfv696GjKOGsVsx5GHNyKbBGGzpzg25pyP2QIDAQAB"
+}

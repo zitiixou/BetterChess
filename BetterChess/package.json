@@ -1,0 +1,12 @@
+{
+  "devDependencies": {
+    "@types/chrome": "^0.0.190"
+  },
+  "dependencies": {
+    "chess-analysis-api": "^1.1.3"
+  },
+  "type": "module",
+  "scripts": {
+    "uglify": "uglifyjs --compress --mangle --output js/chess.min.js -- js/chess.js"
+  }
+}
